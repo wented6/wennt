@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "W";
+const prefix = "!";
 /////////////////////////
 ////////////////////////
 
@@ -55,7 +55,7 @@ client.on('message', async msg =>{
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
 
-    if(command === `ava`){
+    if(command === `avatar`){
 	if(msg.channel.type === 'dm') return msg.channel.send("Nope Nope!! u can't use avatar command in DMs (:")
         let mentions = msg.mentions.members.first()
         if(!mentions) {
@@ -313,8 +313,7 @@ function play(guild, song) {
 
 
 
-
-const adminprefix = "W";
+const adminprefix = "!";
 const devs = ['228139766573432832','228139766573432832'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
