@@ -312,6 +312,11 @@ function play(guild, song) {
 }
 
 
+client.on('ready',async () => {
+  client.channels.find(ch => ch.id === "510264350704140288" && ch.type === 'voice').join();
+});
+
+
 client.on('message', message => {
     if (message.content === '!help') {
         let helpEmbed = new Discord.RichEmbed()
