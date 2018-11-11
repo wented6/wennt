@@ -182,7 +182,7 @@ client.on('message', async msg => {
 	} else if (command === `تخطي`) {
 
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
-        if (!serverQueue) return msg.channel.send("There is no Queue to skip!!");
+        if (!serverQueue) return msg.channel.send("!!لايوجد شيء لتخطيه حاليآ    :x: ");
 
 		serverQueue.connection.dispatcher.end('.. تم التخطي بنجاح');
         return undefined;
@@ -308,7 +308,7 @@ function play(guild, song) {
 		.on('error', error => console.error(error));
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
-	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
+	serverQueue.textChannel.send(`**${song.title}**, تم تشغيل , :white_check_mark:`);
 }
 
 
