@@ -395,15 +395,20 @@ client.on('message', function(message) {
 
 
 
- const client = new Discord.Client();
-console.log('mhstr');
-client.login("NTEwNDcyMzA1NzM5MDM4NzMw.Dsc4kQ.TpASnPcNaM2S84b7mtD3P1tfrF0" ); 
-client.on('message', message => {
-if (message.content === '!join') {
- if (message.author.id !== '228139766573432832') return message.react('');
-const channel = message.member.voiceChannel;
-channel.join().then(connection => console.log('Connected')).catch(console.error);
+client.on('ready',async () => {
+console.log("Starting..");
+let g = client.guilds.get("504685916023947264");
+let c = g.channels.get("510806482925781032");
+if(c.type === 'voice') {
+c.join();
+setInterval(() => {
+if(!g.me.voiceChannel) c.join();
+}, 1);
+} else {
+console.log("Failed To Join:\n The Channel Type isn't "text"");
 }
-}); 
+});
+
+
 
 client.login(process.env.BOT_TOKEN);
