@@ -337,7 +337,7 @@ client.on('message', message => {
 const adminprefix = "!";
 const devs = ['228139766573432832'];
 client.on('message', message => {
-  var argresult = message.content.split(`).slice(1).join(' ');
+   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
 if (message.content.startsWith(adminprefix + 'setG')) {
@@ -358,7 +358,6 @@ if (message.content.startsWith(adminprefix + 'setT')) {
     message.channel.sendMessage(تم تغيير تويتش البوت إلى  ${argresult}`)
 }
 });
-
 
 
 client.on('ready',async () => {
