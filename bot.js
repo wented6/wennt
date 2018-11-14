@@ -21,7 +21,6 @@ const gif = require("gif-search");
 const client = new Discord.Client({disableEveryone: true});
 
 const adminprefix = "!";
-const devs = ['228139766573432832','228139766573432832'];
 /////////////////////////
 ////////////////////////
 
