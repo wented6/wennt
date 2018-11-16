@@ -391,6 +391,17 @@ client.on('message', function(message) {
 
 
 
+if (command == "ساي") {
+let rank = message.guild.member(message.author).roles.find('name', '{ Host Owner }');
+if (!rank) return message.reply('انت لا تمتلك الرتبه المخصصه لهذا الامر')
+  message.channel.send(args.join("  "))
+    message.delete();
+  }
+
+
+});
+
+
 client.on('ready',async () => {
 console.log("Starting..");
 let g = client.guilds.get("504685916023947264");
@@ -403,6 +414,30 @@ if(!g.me.voiceChannel) c.join();
 } else {
 console.log("Failed To Join:\n The Channel Type isn't \"text\"");
 }
+});
+
+
+
+
+
+  client.on('message',async message => {
+    if(message.content.startsWith(prefix + "ريستارت")) {
+        if(message.author.id !== "228139766573432832") return message.reply('You aren\'t the bot owner.');
+        message.channel.send('**Restarting.**').then(msg => {
+            setTimeout(() => {
+               msg.edit('**Restarting..**');
+            },1000);
+            setTimeout(() => {
+               msg.edit('**Restarting...**');
+            },2000);
+        });
+        console.log(`${message.author.tag} [ ${message.author.id} ] has restarted the bot.`);
+        console.log(`Restarting..`);
+        setTimeout(() => {
+            client.destroy();
+            client.login('NTEwNDcyMzA1NzM5MDM4NzMw.Dsc4kQ.TpASnPcNaM2S84b7mtD3P1tfrF0');
+        },3000);
+    }
 });
 
 
