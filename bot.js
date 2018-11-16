@@ -414,7 +414,7 @@ console.log("Failed To Join:\n The Channel Type isn't \"text\"");
 
 
 client.on('message', message => {
-            var prefix = "-";
+            var prefix = "";
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
 
@@ -423,7 +423,7 @@ client.on('message', message => {
 
     let args = message.content.split(" ").slice(1);
 
-    if (command == "امبد") {
+    if (command == "em") {
         if (!message.channel.guild) return message.reply('** This command only for servers **');
         let say = new Discord.RichEmbed()
             .addField('Emebad:', `${message.author.username}#${message.author.discriminator}`)
