@@ -391,15 +391,7 @@ client.on('message', function(message) {
 
 
 
-if (command == "ساي") {
-let rank = message.guild.member(message.author).roles.find('name', '{ Host Owner }');
-if (!rank) return message.reply('انت لا تمتلك الرتبه المخصصه لهذا الامر')
-  message.channel.send(args.join("  "))
-    message.delete();
-  }
 
-
-});
 
 
 client.on('ready',async () => {
