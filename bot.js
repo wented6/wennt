@@ -417,6 +417,4 @@ console.log("Failed To Join:\n The Channel Type isn't \"text\"");
 
 
 
-
-
 client.login(process.env.BOT_TOKEN);
