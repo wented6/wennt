@@ -102,7 +102,7 @@ client.on('message', async msg => {
 	if (command === `شغل`) {
 		const voiceChannel = msg.member.voiceChannel;
         
-        if (!voiceChannel) return msg.channel.send("I can't find you in any voice channel!");
+        if (!voiceChannel) return msg.channel.send(":x:  **..   ! انت غير موجود بروم صوتي**");
         
         const permissions = voiceChannel.permissionsFor(msg.client.user);
         
@@ -182,9 +182,9 @@ client.on('message', async msg => {
 	} else if (command === `تخطي`) {
 
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
-        if (!serverQueue) return msg.channel.send("!!لايوجد شيء لتخطيه حاليآ    :x: ");
+        if (!serverQueue) return msg.channel.send(":x:    **..  !!لايوجد شيء لتخطيه حاليآ**");
 
-		serverQueue.connection.dispatcher.end('.. تم التخطي بنجاح');
+		serverQueue.connection.dispatcher.end('hite_check_mark:  **..   تم التخطي بنجاح**');
         return undefined;
         
 	} else if (command === `اطلع`) {
@@ -200,7 +200,7 @@ client.on('message', async msg => {
 
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
 		if (!serverQueue) return msg.channel.send('You only can use this command while music is playing!');
-        if (!args[1]) return msg.channel.send(`ارتفاع صوت البوت هو..  **${serverQueue.volume}**`);
+        if (!args[1]) return msg.channel.send(`:headphones:   .. ارتفاع صوت البوت**${serverQueue.volume}**`);
         
 		serverQueue.volume = args[1];
         serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 50);
@@ -209,14 +209,14 @@ client.on('message', async msg => {
 
 	} else if (command === `حاليا`) {
 
-		if (!serverQueue) return msg.channel.send('.. انت تستمع الى ');
+		if (!serverQueue) return msg.channel.send('**.. انت تستمع الى** ');
 		const embedNP = new Discord.RichEmbed()
 	    .setDescription(`Now playing **${serverQueue.songs[0].title}**`)
         return msg.channel.sendEmbed(embedNP);
         
 	} else if (command === `قائمة`) {
 		
-		if (!serverQueue) return msg.channel.send('.. القائمة هي');
+		if (!serverQueue) return msg.channel.send('**.. القائمة هي**');
 		let index = 0;
 //	//	//
 		const embedqu = new Discord.RichEmbed()
@@ -230,7 +230,7 @@ client.on('message', async msg => {
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
-			return msg.channel.send('تم ايقاف الاغنية مؤقتآ ,');
+			return msg.channel.send(':white_check_mark:   **..  تم ايقاف الاغنية مؤقتآ**');
 		}
 		return msg.channel.send('There is no Queue to Pause!');
 	} else if (command === "كمل") {
@@ -238,7 +238,7 @@ client.on('message', async msg => {
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
 			serverQueue.connection.dispatcher.resume();
-            return msg.channel.send('تم , بدأت الاغنية');
+            return msg.channel.send(':white_check_mark:   **..  تم  بدأ الاغنية**');
             
 		}
 		return msg.channel.send('Queue is empty!');
