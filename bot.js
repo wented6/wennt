@@ -200,7 +200,7 @@ client.on('message', async msg => {
 
 		if (!msg.member.voiceChannel) return msg.channel.send(":x:   **!!  يجب أن تكون في قناة صوتية لتشغيل أوامر الموسيقى**");
 		if (!serverQueue) return msg.channel.send(':x:   **!! يمكنك فقط استخدام هذا الأمر أثناء تشغيل الموسيقى**');
-        if (!args[1]) return msg.channel.send(`:headphones:   .. ارتفاع صوت البوت**${serverQueue.volume}**`);
+        if (!args[1]) return msg.channel.send(`:headphones:   .. **ارتفاع صوت البوت**  ``${serverQueue.volume}```);
         
 		serverQueue.volume = args[1];
         serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 50);
