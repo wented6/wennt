@@ -181,7 +181,7 @@ client.on('message', async msg => {
         
 	} else if (command === `تخطي`) {
 
-		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
+		if (!msg.member.voiceChannel) return msg.channel.send(":x:   **!!  يجب أن تكون في قناة صوتية لتشغيل أوامر الموسيقى**");
         if (!serverQueue) return msg.channel.send(":x:    **..  !!لايوجد شيء لتخطيه حاليآ**");
 
 		serverQueue.connection.dispatcher.end('hite_check_mark:  **..   تم التخطي بنجاح**');
@@ -189,7 +189,7 @@ client.on('message', async msg => {
         
 	} else if (command === `اطلع`) {
 
-		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
+		if (!msg.member.voiceChannel) return msg.channel.send(":x:   **!!  يجب أن تكون في قناة صوتية لتشغيل أوامر الموسيقى**");
         if (!serverQueue) return msg.channel.send(".. تم إيقاف الاغنيلة بنجاح");
         
 		serverQueue.songs = [];
@@ -198,8 +198,8 @@ client.on('message', async msg => {
         
 	} else if (command === `صوت`) {
 
-		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
-		if (!serverQueue) return msg.channel.send('You only can use this command while music is playing!');
+		if (!msg.member.voiceChannel) return msg.channel.send(":x:   **!!  يجب أن تكون في قناة صوتية لتشغيل أوامر الموسيقى**");
+		if (!serverQueue) return msg.channel.send(':x:   **!! يمكنك فقط استخدام هذا الأمر أثناء تشغيل الموسيقى**');
         if (!args[1]) return msg.channel.send(`:headphones:   .. ارتفاع صوت البوت**${serverQueue.volume}**`);
         
 		serverQueue.volume = args[1];
