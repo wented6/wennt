@@ -308,7 +308,7 @@ function play(guild, song) {
 		.on('error', error => console.error(error));
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
-	serverQueue.textChannel.send(`**${song.title}**, `.. تم تشغيل` :white_check_mark:`);
+	serverQueue.textChannel.send(`**${song.title}**, :white_check_mark: .. تم تشغيل `);
 }
 
 
