@@ -108,7 +108,7 @@ client.on('message', async msg => {
         
         if (!permissions.has('CONNECT')) {
 
-			return msg.channel.send("I don't have enough permissions to join your voice channel!");
+			return msg.channel.send(" :x:  **..  ليس لدي الصلاحيات لدخول الروم**");
         }
         
 		if (!permissions.has('SPEAK')) {
@@ -162,7 +162,7 @@ client.on('message', async msg => {
 						});
 					} catch (err) {
 						console.error(err);
-						return msg.channel.send('No one respone a number!!');
+						return msg.channel.send(':exclamation:  :x:  **..  لم يتم اختيار رقم لبدأ الاغنية**');
                     }
                     
 					const videoIndex = parseInt(response.first().content);
