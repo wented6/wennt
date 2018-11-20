@@ -182,14 +182,7 @@ client.on('message', async msg => {
 	} else if (command === `s`) {
 
 		if (!msg.member.voiceChannel) return msg.channel.send(":x:   **!!  يجب أن تكون في قناة صوتية لتشغيل أوامر الموسيقى**");
-		     msg.delete(5000);
-          message.delete(5000);
-        });
         if (!serverQueue) return msg.channel.send(":x:    **..  !!لايوجد شيء لتخطيه حاليآ**");
-		     msg.delete(5000);
-          message.delete(5000);
-        });
-
 		serverQueue.connection.dispatcher.end('hite_check_mark:  **..   تم التخطي بنجاح**');
         return undefined;
         
