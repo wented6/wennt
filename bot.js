@@ -301,6 +301,8 @@ function isYoutube(str) {
      }
     });
 
+         //by : mr hngrl
+
 
 client.on('ready',async () => {
 console.log("Starting..");
@@ -315,7 +317,6 @@ if(!g.me.voiceChannel) c.join();
 console.log("Failed To Join:\n The Channel Type isn't \"text\"");
 }
 });
-         //by : mr hngrl
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
