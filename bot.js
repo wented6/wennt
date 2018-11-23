@@ -247,7 +247,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[Codes] ${client.users.size}`)
-    client.user.setStatus("Do Not Disturb")
+    client.user.setStatus("ldle")
 });
 
 
