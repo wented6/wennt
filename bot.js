@@ -242,6 +242,18 @@ function search_video(query, cb) {
 
          //by : mr hngrl
 
+
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`in ${client.guilds.size} servers `)
+    console.log(`[Codes] ${client.users.size}`)
+    client.user.setStatus("Do Not Disturb")
+});
+
+
+
+
+
 const adminprefix = "برفكس الادمن";  
 const devs = ['الايدي'];  
 hngel.on('message', message => {  
